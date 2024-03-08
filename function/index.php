@@ -3,64 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Functon</title>
+    <title>Associative Arrays</title>
 </head>
 <body>
-    
+    <?php 
+        $books = [
+            [
+                'name'          => 'Ashikur Rahman',
+                'department'    => 'Computer',
+                'releaseYear'   => 2019,
+                'parseURL'      => 'http://example.com'
+            ],
 
-<?php 
+            [
+                'name'          => 'Hasinur Rahman',
+                'department'    => 'CSE',
+                'releaseYear'   => 2013,
+                'parseURL'      => 'http://hasinur.co'
+            ],
 
-$books = [
-    [
-        'course'        => 'Web Development',
-        'author'        => 'Ashikur Rahman',
-        'releaseYear'   => 2024,
-        'parseEmail'    => 'info.co.ashik@gmail.com'
-    ],
+            [
+                'name'          => 'Mehedi Hasan',
+                'department'    => 'Computer',
+                'releaseYear'   =>  2013,
+                'parseURL'      => 'http://mehedi.co'
+            ]
+        ];
 
-    [
-        'course'        => 'Web Design',
-        'author'        => 'Ashikur Rahman',
-        'releaseYear'   => 2024,
-        'parseEmail'    => 'ashikurrahman7194@gmail.com'
-    ],
+        function filterByAuthor ( $books ) {
+            $filterBooks = [];
 
-    [
-        'course'        => 'CEO Marketing',
-        'author'        => 'Ashikur Rahman',
-        'releaseYear'   => 2024,
-        'paresEmail'    => 'ashik@gmail.com'
-    ]
-];
+            foreach ( $books as $book ) {
+                if ( $book['department'] === 'Computer'){
+                    $filterBooks = $book;
+                }
+            }
 
-function filterByAuthor ( $books ) {
-    $filterBooks = [];
-
-
-    foreach ( $books as $book ) {
-        if ($book['author']  === 'Ashikur Rahman') {
-            $filterBooks = $book;
-        }
-    }
-
-    return $filterBooks;
-}
+            return $filterBooks;
+        }   
+    ?>
 
 
-?>
+    <ul>
+        <?php foreach (filterByAuthor( $books ) as $book ): ?> 
+            
+            <li>
+                <a href="<?= $books['parseURL'] ?>">
+                <?= $books['releaseYear']?>  (<?= $books['department']?>)
+                </a>
+            </li>
 
-<ul>
-    <?php foreach ( filterByAuthor( $books ) as $book) : ?>{
-        <li>
-            <a href=" <?= $book['parseEmail'] ?>">
-            <?= $book['releaseYear']?> (<?= $book['']?>)
-        </a>
-        </li>
+        <?php endforeach; ?>
+    </ul>
 
-    }
-
-    <?php endforeach ?>
-</ul>
-
+    <p>
+        <?= filterByAuthor($book)?>
+    </p>
 </body>
 </html>

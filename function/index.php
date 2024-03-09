@@ -17,7 +17,7 @@
             ],
 
             [
-                'name'          => 'PHP AND Laravel Course',
+                'name'          => 'PHP and Laravel Course',
                 'author'        => 'Hasinur Rahman',
                 'releaseYear'   => 2013,
                 'parseURL'      => 'http://hasinur.co'

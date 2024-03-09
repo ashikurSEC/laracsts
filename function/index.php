@@ -43,21 +43,5 @@
         }   
     ?>
 
-
-    <ul>
-        <?php foreach (filterByAuthor( $books ) as $book ): ?> 
-            
-            <li>
-                <a href="<?= $books['parseURL'] ?>">
-                <?= $books['releaseYear']?>  (<?= $books['department']?>)
-                </a>
-            </li>
-
-        <?php endforeach; ?>
-    </ul>
-
-    <p>
-        <?= filterByAuthor($book)?>
-    </p>
 </body>
 </html>

@@ -1,23 +1,5 @@
-<?php 
+<?php
 
-require_once 'index.view.php';
+$headding = "Home Page";
 
-/**
- * Undocumented function
- *
- * @return void
- */
-function test_project() {
-    return 'Hello';
-}
-
-/**
- * Calculate summation
- *
- * @param integer $a
- * @param integer $b
- * @return integer
- */
-function get_some(int $a, int $b): int {
-    return $a + $b;
-}
+require_once __DIR__ . '/views/index.view.php';
